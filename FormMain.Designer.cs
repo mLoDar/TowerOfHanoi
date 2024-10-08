@@ -1,6 +1,6 @@
 ﻿namespace TowerOfHanoi
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            SuspendLayout();
+            // 
+            // FormMain
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(982, 553);
+            Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Tower of Hanoi visualization";
+            ResumeLayout(false);
         }
 
         #endregion
