@@ -6,5 +6,10 @@ namespace TowerOfHanoi
         {
             InitializeComponent();
         }
+
+        private void TrackBarSpeed_Scroll(object sender, EventArgs e)
+        {
+            LabelSpeed.Text = $"Speed: {TrackBarSpeed.Value} millis";
+        }
     }
 }
