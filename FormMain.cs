@@ -7,8 +7,10 @@ namespace TowerOfHanoi
             InitializeComponent();
         }
 
-        private void TrackBarSpeed_Scroll(object sender, EventArgs e)
+        private void TrackBarSpeed_ValueChanged(object sender, EventArgs e)
         {
+            TimerHanoiMove.Interval = TrackBarSpeed.Value;
+
             LabelSpeed.Text = $"Speed: {TrackBarSpeed.Value} millis";
         }
     }

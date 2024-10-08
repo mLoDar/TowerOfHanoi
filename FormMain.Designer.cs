@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             ButtonReset = new Button();
             ButtonStartStop = new Button();
             TrackBarSpeed = new TrackBar();
@@ -38,6 +39,7 @@
             LabelAmountOfDisks = new Label();
             LabelMoveProgressMinimum = new Label();
             LabelMoveProgressMaximum = new Label();
+            TimerHanoiMove = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)TrackBarSpeed).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NumericUpDownAmountOfDisks).BeginInit();
             SuspendLayout();
@@ -64,16 +66,17 @@
             // 
             TrackBarSpeed.Location = new Point(690, 20);
             TrackBarSpeed.Maximum = 1000;
-            TrackBarSpeed.Minimum = 50;
+            TrackBarSpeed.Minimum = 100;
             TrackBarSpeed.Name = "TrackBarSpeed";
             TrackBarSpeed.Size = new Size(150, 56);
             TrackBarSpeed.TabIndex = 7;
             TrackBarSpeed.Value = 500;
-            TrackBarSpeed.Scroll += TrackBarSpeed_Scroll;
+            TrackBarSpeed.ValueChanged += TrackBarSpeed_ValueChanged;
             // 
             // ProgressBarMoveProgess
             // 
             ProgressBarMoveProgess.Location = new Point(160, 150);
+            ProgressBarMoveProgess.Maximum = 500;
             ProgressBarMoveProgess.Name = "ProgressBarMoveProgess";
             ProgressBarMoveProgess.Size = new Size(680, 20);
             ProgressBarMoveProgess.TabIndex = 4;
@@ -81,6 +84,7 @@
             // NumericUpDownAmountOfDisks
             // 
             NumericUpDownAmountOfDisks.Location = new Point(520, 43);
+            NumericUpDownAmountOfDisks.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             NumericUpDownAmountOfDisks.Minimum = new decimal(new int[] { 3, 0, 0, 0 });
             NumericUpDownAmountOfDisks.Name = "NumericUpDownAmountOfDisks";
             NumericUpDownAmountOfDisks.Size = new Size(150, 27);
@@ -136,6 +140,10 @@
             LabelMoveProgressMaximum.TabIndex = 6;
             LabelMoveProgressMaximum.Text = "0";
             // 
+            // TimerHanoiMove
+            // 
+            TimerHanoiMove.Interval = 500;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -171,5 +179,6 @@
         private Label LabelAmountOfDisks;
         private Label LabelMoveProgressMinimum;
         private Label LabelMoveProgressMaximum;
+        private System.Windows.Forms.Timer TimerHanoiMove;
     }
 }
