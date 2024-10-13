@@ -29,156 +29,162 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            ButtonReset = new Button();
-            ButtonStartStop = new Button();
-            TrackBarSpeed = new TrackBar();
-            ProgressBarMoveProgess = new ProgressBar();
-            NumericUpDownAmountOfDisks = new NumericUpDown();
-            LabelSpeed = new Label();
-            LabelMoveProgess = new Label();
-            LabelAmountOfDisks = new Label();
-            LabelMoveProgressMinimum = new Label();
-            LabelMoveProgressMaximum = new Label();
-            TimerHanoiMove = new System.Windows.Forms.Timer(components);
-            ((System.ComponentModel.ISupportInitialize)TrackBarSpeed).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)NumericUpDownAmountOfDisks).BeginInit();
+            BtnReset = new Button();
+            BtnStartStop = new Button();
+            TrbSpeed = new TrackBar();
+            PrgMoveProgess = new ProgressBar();
+            NudAmountOfDisks = new NumericUpDown();
+            LblSpeed = new Label();
+            LblMoveProgess = new Label();
+            LblAmountOfDisks = new Label();
+            LblMoveProgressMinimum = new Label();
+            LblMoveProgressMaximum = new Label();
+            TmrHanoiMove = new System.Windows.Forms.Timer(components);
+            ((System.ComponentModel.ISupportInitialize)TrbSpeed).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NudAmountOfDisks).BeginInit();
             SuspendLayout();
             // 
-            // ButtonReset
+            // BtnReset
             // 
-            ButtonReset.Location = new Point(330, 20);
-            ButtonReset.Name = "ButtonReset";
-            ButtonReset.Size = new Size(150, 50);
-            ButtonReset.TabIndex = 1;
-            ButtonReset.Text = "Reset";
-            ButtonReset.UseVisualStyleBackColor = true;
+            BtnReset.Location = new Point(289, 15);
+            BtnReset.Margin = new Padding(3, 2, 3, 2);
+            BtnReset.Name = "BtnReset";
+            BtnReset.Size = new Size(131, 38);
+            BtnReset.TabIndex = 1;
+            BtnReset.Text = "Reset";
+            BtnReset.UseVisualStyleBackColor = true;
             // 
-            // ButtonStartStop
+            // BtnStartStop
             // 
-            ButtonStartStop.Location = new Point(160, 20);
-            ButtonStartStop.Name = "ButtonStartStop";
-            ButtonStartStop.Size = new Size(150, 50);
-            ButtonStartStop.TabIndex = 0;
-            ButtonStartStop.Text = "Start";
-            ButtonStartStop.UseVisualStyleBackColor = true;
+            BtnStartStop.Location = new Point(140, 15);
+            BtnStartStop.Margin = new Padding(3, 2, 3, 2);
+            BtnStartStop.Name = "BtnStartStop";
+            BtnStartStop.Size = new Size(131, 38);
+            BtnStartStop.TabIndex = 0;
+            BtnStartStop.Text = "Start";
+            BtnStartStop.UseVisualStyleBackColor = true;
             // 
-            // TrackBarSpeed
+            // TrbSpeed
             // 
-            TrackBarSpeed.Location = new Point(690, 20);
-            TrackBarSpeed.Maximum = 1000;
-            TrackBarSpeed.Minimum = 100;
-            TrackBarSpeed.Name = "TrackBarSpeed";
-            TrackBarSpeed.Size = new Size(150, 56);
-            TrackBarSpeed.TabIndex = 7;
-            TrackBarSpeed.Value = 500;
-            TrackBarSpeed.ValueChanged += TrackBarSpeed_ValueChanged;
+            TrbSpeed.Location = new Point(604, 15);
+            TrbSpeed.Margin = new Padding(3, 2, 3, 2);
+            TrbSpeed.Maximum = 1000;
+            TrbSpeed.Minimum = 100;
+            TrbSpeed.Name = "TrbSpeed";
+            TrbSpeed.Size = new Size(131, 45);
+            TrbSpeed.TabIndex = 7;
+            TrbSpeed.Value = 500;
+            TrbSpeed.ValueChanged += TrbSpeed_ValueChanged;
             // 
-            // ProgressBarMoveProgess
+            // PrgMoveProgess
             // 
-            ProgressBarMoveProgess.Location = new Point(160, 150);
-            ProgressBarMoveProgess.Maximum = 500;
-            ProgressBarMoveProgess.Name = "ProgressBarMoveProgess";
-            ProgressBarMoveProgess.Size = new Size(680, 20);
-            ProgressBarMoveProgess.TabIndex = 4;
+            PrgMoveProgess.Location = new Point(140, 112);
+            PrgMoveProgess.Margin = new Padding(3, 2, 3, 2);
+            PrgMoveProgess.Maximum = 500;
+            PrgMoveProgess.Name = "PrgMoveProgess";
+            PrgMoveProgess.Size = new Size(595, 15);
+            PrgMoveProgess.TabIndex = 4;
             // 
-            // NumericUpDownAmountOfDisks
+            // NudAmountOfDisks
             // 
-            NumericUpDownAmountOfDisks.Location = new Point(520, 43);
-            NumericUpDownAmountOfDisks.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            NumericUpDownAmountOfDisks.Minimum = new decimal(new int[] { 3, 0, 0, 0 });
-            NumericUpDownAmountOfDisks.Name = "NumericUpDownAmountOfDisks";
-            NumericUpDownAmountOfDisks.Size = new Size(150, 27);
-            NumericUpDownAmountOfDisks.TabIndex = 3;
-            NumericUpDownAmountOfDisks.TextAlign = HorizontalAlignment.Center;
-            NumericUpDownAmountOfDisks.Value = new decimal(new int[] { 3, 0, 0, 0 });
+            NudAmountOfDisks.Location = new Point(455, 32);
+            NudAmountOfDisks.Margin = new Padding(3, 2, 3, 2);
+            NudAmountOfDisks.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            NudAmountOfDisks.Minimum = new decimal(new int[] { 3, 0, 0, 0 });
+            NudAmountOfDisks.Name = "NudAmountOfDisks";
+            NudAmountOfDisks.Size = new Size(131, 23);
+            NudAmountOfDisks.TabIndex = 3;
+            NudAmountOfDisks.TextAlign = HorizontalAlignment.Center;
+            NudAmountOfDisks.Value = new decimal(new int[] { 3, 0, 0, 0 });
             // 
-            // LabelSpeed
+            // LblSpeed
             // 
-            LabelSpeed.AutoSize = true;
-            LabelSpeed.Location = new Point(705, 56);
-            LabelSpeed.Name = "LabelSpeed";
-            LabelSpeed.Size = new Size(121, 20);
-            LabelSpeed.TabIndex = 8;
-            LabelSpeed.Text = "Speed: 500 millis";
+            LblSpeed.AutoSize = true;
+            LblSpeed.Location = new Point(617, 42);
+            LblSpeed.Name = "LblSpeed";
+            LblSpeed.Size = new Size(94, 15);
+            LblSpeed.TabIndex = 8;
+            LblSpeed.Text = "Speed: 500 millis";
             // 
-            // LabelMoveProgess
+            // LblMoveProgess
             // 
-            LabelMoveProgess.AutoSize = true;
-            LabelMoveProgess.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LabelMoveProgess.Location = new Point(465, 120);
-            LabelMoveProgess.Name = "LabelMoveProgess";
-            LabelMoveProgess.Size = new Size(85, 25);
-            LabelMoveProgess.TabIndex = 9;
-            LabelMoveProgess.Text = "Progress";
+            LblMoveProgess.AutoSize = true;
+            LblMoveProgess.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblMoveProgess.Location = new Point(407, 90);
+            LblMoveProgess.Name = "LblMoveProgess";
+            LblMoveProgess.Size = new Size(70, 20);
+            LblMoveProgess.TabIndex = 9;
+            LblMoveProgess.Text = "Progress";
             // 
-            // LabelAmountOfDisks
+            // LblAmountOfDisks
             // 
-            LabelAmountOfDisks.AutoSize = true;
-            LabelAmountOfDisks.Location = new Point(535, 20);
-            LabelAmountOfDisks.Name = "LabelAmountOfDisks";
-            LabelAmountOfDisks.Size = new Size(119, 20);
-            LabelAmountOfDisks.TabIndex = 2;
-            LabelAmountOfDisks.Text = "Amount of disks:";
+            LblAmountOfDisks.AutoSize = true;
+            LblAmountOfDisks.Location = new Point(468, 15);
+            LblAmountOfDisks.Name = "LblAmountOfDisks";
+            LblAmountOfDisks.Size = new Size(97, 15);
+            LblAmountOfDisks.TabIndex = 2;
+            LblAmountOfDisks.Text = "Amount of disks:";
             // 
-            // LabelMoveProgressMinimum
+            // LblMoveProgressMinimum
             // 
-            LabelMoveProgressMinimum.AutoSize = true;
-            LabelMoveProgressMinimum.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LabelMoveProgressMinimum.Location = new Point(132, 145);
-            LabelMoveProgressMinimum.Name = "LabelMoveProgressMinimum";
-            LabelMoveProgressMinimum.Size = new Size(22, 25);
-            LabelMoveProgressMinimum.TabIndex = 5;
-            LabelMoveProgressMinimum.Text = "0";
+            LblMoveProgressMinimum.AutoSize = true;
+            LblMoveProgressMinimum.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LblMoveProgressMinimum.Location = new Point(116, 109);
+            LblMoveProgressMinimum.Name = "LblMoveProgressMinimum";
+            LblMoveProgressMinimum.Size = new Size(17, 20);
+            LblMoveProgressMinimum.TabIndex = 5;
+            LblMoveProgressMinimum.Text = "0";
             // 
-            // LabelMoveProgressMaximum
+            // LblMoveProgressMaximum
             // 
-            LabelMoveProgressMaximum.AutoSize = true;
-            LabelMoveProgressMaximum.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LabelMoveProgressMaximum.Location = new Point(846, 145);
-            LabelMoveProgressMaximum.Name = "LabelMoveProgressMaximum";
-            LabelMoveProgressMaximum.Size = new Size(22, 25);
-            LabelMoveProgressMaximum.TabIndex = 6;
-            LabelMoveProgressMaximum.Text = "0";
+            LblMoveProgressMaximum.AutoSize = true;
+            LblMoveProgressMaximum.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LblMoveProgressMaximum.Location = new Point(740, 109);
+            LblMoveProgressMaximum.Name = "LblMoveProgressMaximum";
+            LblMoveProgressMaximum.Size = new Size(17, 20);
+            LblMoveProgressMaximum.TabIndex = 6;
+            LblMoveProgressMaximum.Text = "0";
             // 
-            // TimerHanoiMove
+            // TmrHanoiMove
             // 
-            TimerHanoiMove.Interval = 500;
+            TmrHanoiMove.Interval = 500;
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(982, 553);
-            Controls.Add(LabelMoveProgess);
-            Controls.Add(LabelSpeed);
-            Controls.Add(TrackBarSpeed);
-            Controls.Add(LabelMoveProgressMaximum);
-            Controls.Add(LabelMoveProgressMinimum);
-            Controls.Add(ProgressBarMoveProgess);
-            Controls.Add(NumericUpDownAmountOfDisks);
-            Controls.Add(LabelAmountOfDisks);
-            Controls.Add(ButtonReset);
-            Controls.Add(ButtonStartStop);
+            ClientSize = new Size(859, 415);
+            Controls.Add(LblMoveProgess);
+            Controls.Add(LblSpeed);
+            Controls.Add(TrbSpeed);
+            Controls.Add(LblMoveProgressMaximum);
+            Controls.Add(LblMoveProgressMinimum);
+            Controls.Add(PrgMoveProgess);
+            Controls.Add(NudAmountOfDisks);
+            Controls.Add(LblAmountOfDisks);
+            Controls.Add(BtnReset);
+            Controls.Add(BtnStartStop);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tower of Hanoi visualization";
-            ((System.ComponentModel.ISupportInitialize)TrackBarSpeed).EndInit();
-            ((System.ComponentModel.ISupportInitialize)NumericUpDownAmountOfDisks).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TrbSpeed).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NudAmountOfDisks).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button ButtonReset;
-        private Button ButtonStartStop;
-        private TrackBar TrackBarSpeed;
-        private ProgressBar ProgressBarMoveProgess;
-        private NumericUpDown NumericUpDownAmountOfDisks;
-        private Label LabelSpeed;
-        private Label LabelMoveProgess;
-        private Label LabelAmountOfDisks;
-        private Label LabelMoveProgressMinimum;
-        private Label LabelMoveProgressMaximum;
-        private System.Windows.Forms.Timer TimerHanoiMove;
+        private Button BtnReset;
+        private Button BtnStartStop;
+        private TrackBar TrbSpeed;
+        private ProgressBar PrgMoveProgess;
+        private NumericUpDown NudAmountOfDisks;
+        private Label LblSpeed;
+        private Label LblMoveProgess;
+        private Label LblAmountOfDisks;
+        private Label LblMoveProgressMinimum;
+        private Label LblMoveProgressMaximum;
+        private System.Windows.Forms.Timer TmrHanoiMove;
     }
 }
