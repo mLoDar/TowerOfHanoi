@@ -68,12 +68,11 @@
             // 
             TrbSpeed.Location = new Point(604, 15);
             TrbSpeed.Margin = new Padding(3, 2, 3, 2);
-            TrbSpeed.Maximum = 1000;
-            TrbSpeed.Minimum = 100;
+            TrbSpeed.Minimum = 1;
             TrbSpeed.Name = "TrbSpeed";
             TrbSpeed.Size = new Size(131, 45);
             TrbSpeed.TabIndex = 7;
-            TrbSpeed.Value = 500;
+            TrbSpeed.Value = 5;
             TrbSpeed.ValueChanged += TrbSpeed_ValueChanged;
             // 
             // PrgMoveProgess
@@ -96,15 +95,16 @@
             NudAmountOfDisks.TabIndex = 3;
             NudAmountOfDisks.TextAlign = HorizontalAlignment.Center;
             NudAmountOfDisks.Value = new decimal(new int[] { 3, 0, 0, 0 });
+            NudAmountOfDisks.ValueChanged += NudAmountOfDisks_ValueChanged;
             // 
             // LblSpeed
             // 
             LblSpeed.AutoSize = true;
             LblSpeed.Location = new Point(617, 42);
             LblSpeed.Name = "LblSpeed";
-            LblSpeed.Size = new Size(94, 15);
+            LblSpeed.Size = new Size(106, 15);
             LblSpeed.TabIndex = 8;
-            LblSpeed.Text = "Speed: 500 millis";
+            LblSpeed.Text = "Speed: 0.5 seconds";
             // 
             // LblMoveProgess
             // 
@@ -168,6 +168,7 @@
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tower of Hanoi visualization";
+            Load += FormMain_Load;
             ((System.ComponentModel.ISupportInitialize)TrbSpeed).EndInit();
             ((System.ComponentModel.ISupportInitialize)NudAmountOfDisks).EndInit();
             ResumeLayout(false);
