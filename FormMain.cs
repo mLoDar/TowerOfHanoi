@@ -2,8 +2,10 @@ namespace TowerOfHanoi
 {
     public partial class FormMain : Form
     {
-        private static int _AmountOfDisks;
-        private static int _AmountOfNeededMoves;
+        private static int _amountOfDisks;
+        private static int _amountOfNeededMoves;
+
+        private List<Tuple<int, int, int>> _moves = [];
 
 
 
@@ -55,10 +57,25 @@ namespace TowerOfHanoi
 
         private void RefreshDiskRelatedVariables()
         {
-            _AmountOfDisks = (int)Math.Round(NudAmountOfDisks.Value);
-            _AmountOfNeededMoves = (int)Math.Pow(2, _AmountOfDisks) - 1;
+            _amountOfDisks = (int)Math.Round(NudAmountOfDisks.Value);
+            _amountOfNeededMoves = (int)Math.Pow(2, _amountOfDisks) - 1;
 
-            LblMoveProgressMaximum.Text = Convert.ToString(_AmountOfNeededMoves);
+            LblMoveProgressMaximum.Text = Convert.ToString(_amountOfNeededMoves);
+        }
+
+        private void SolverTowerOfHanoi(int diskCount, int rodSender, int rodReceiver, int rodCache)
+        {
+            if (diskCount == 1)
+            {
+                _moves.Add(new Tuple<int, int, int>(diskCount, rodSender, rodReceiver));
+                return;
+            }
+
+            SolverTowerOfHanoi(diskCount - 1, rodSender, rodCache, rodReceiver);
+
+            _moves.Add(new Tuple<int, int, int>(diskCount, rodSender, rodReceiver));
+
+            SolverTowerOfHanoi(diskCount - 1, rodCache, rodReceiver, rodSender);
         }
     }
 }
