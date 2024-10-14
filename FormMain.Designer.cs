@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             BtnReset = new Button();
-            BtnStartStop = new Button();
+            BtnStart = new Button();
             TrbSpeed = new TrackBar();
             PrgMoveProgess = new ProgressBar();
             NudAmountOfDisks = new NumericUpDown();
@@ -54,15 +54,15 @@
             BtnReset.UseVisualStyleBackColor = true;
             BtnReset.Click += BtnReset_Click;
             // 
-            // BtnStartStop
+            // BtnStart
             // 
-            BtnStartStop.Location = new Point(160, 20);
-            BtnStartStop.Name = "BtnStartStop";
-            BtnStartStop.Size = new Size(150, 51);
-            BtnStartStop.TabIndex = 0;
-            BtnStartStop.Text = "Start";
-            BtnStartStop.UseVisualStyleBackColor = true;
-            BtnStartStop.Click += BtnStartStop_Click;
+            BtnStart.Location = new Point(160, 20);
+            BtnStart.Name = "BtnStart";
+            BtnStart.Size = new Size(150, 51);
+            BtnStart.TabIndex = 0;
+            BtnStart.Text = "Start";
+            BtnStart.UseVisualStyleBackColor = true;
+            BtnStart.Click += BtnStart_Click;
             // 
             // TrbSpeed
             // 
@@ -161,7 +161,7 @@
             Controls.Add(NudAmountOfDisks);
             Controls.Add(LblAmountOfDisks);
             Controls.Add(BtnReset);
-            Controls.Add(BtnStartStop);
+            Controls.Add(BtnStart);
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tower of Hanoi visualization";
@@ -174,7 +174,7 @@
 
         #endregion
         private Button BtnReset;
-        private Button BtnStartStop;
+        private Button BtnStart;
         private TrackBar TrbSpeed;
         private ProgressBar PrgMoveProgess;
         private NumericUpDown NudAmountOfDisks;

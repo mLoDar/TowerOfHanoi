@@ -16,10 +16,6 @@ namespace TowerOfHanoi
             new Stack<Panel>()
         ];
 
-        private static bool _processStarted = false;
-        private static bool _processEnded = false;
-        private static bool _stopOver = false;
-
 
 
         private static readonly int _uiScalingRodHeight = 250;
@@ -89,15 +85,12 @@ namespace TowerOfHanoi
             {
                 TmrHanoiMove.Stop();
 
-                _processStarted = true;
-                _processEnded = true;
-
-                BtnStartStop.Text = "Start";
-                BtnStartStop.Enabled = false;
-                PrgMoveProgess.Value = 0;
-
                 BtnReset.Enabled = true;
+                BtnStart.Enabled = false;
+
+                PrgMoveProgess.Value = 0;
                 NudAmountOfDisks.Enabled = true;
+
 
 
                 string msbCaption = "Success";
@@ -105,84 +98,63 @@ namespace TowerOfHanoi
 
                 MessageBoxIcon msbIcons = MessageBoxIcon.Information;
                 MessageBoxButtons msbButtons = MessageBoxButtons.OK;
-                
+
                 MessageBox.Show(msbText, msbCaption, msbButtons, msbIcons);
             }
         }
 
-        private void BtnStartStop_Click(object sender, EventArgs e)
+        private void BtnStart_Click(object sender, EventArgs e)
         {
-            if (_processEnded == true)
+            RefreshDiskRelatedVariables();
+
+
+
+            int rodCenterX = this.Width / 6;
+
+            for (int i = 0; i < 3; i++)
             {
-                return;
+                _rods[i] = new Stack<Panel>();
             }
 
-            if (_processStarted == false)
+            for (int i = 0; i < _rods.Length; i++)
             {
-                if (_stopOver == false)
+                Panel rod = new()
                 {
-                    RefreshDiskRelatedVariables();
+                    Width = _uiScalingRodWidth,
+                    Height = _uiScalingRodHeight,
+                    BackColor = Color.Black,
 
-
-
-                    int rodCenterX = this.Width / 6;
-
-                    for (int i = 0; i < 3; i++)
-                    {
-                        _rods[i] = new Stack<Panel>();
-                    }
-
-                    for (int i = 0; i < _rods.Length; i++)
-                    {
-                        Panel rod = new()
-                        {
-                            Width = _uiScalingRodWidth,
-                            Height = _uiScalingRodHeight,
-                            BackColor = Color.Black,
-
-                            Location = new Point((rodCenterX * (2 * i + 1)) - (_uiScalingRodWidth / 2), this.Height - _uiScalingRodHeight - 100)
-                        };
-                        this.Controls.Add(rod);
-                    }
-
-                    for (int i = _amountOfDisks; i > 0; i--)
-                    {
-                        Panel disk = new()
-                        {
-                            Width = _uiScalingBiggestDiskWidth + (i - 1) * _uiScalingDisksMargin,
-                            Height = _uiScalingDisksHeight,
-
-                            BackColor = Color.DeepSkyBlue
-                        };
-
-                        int rodX = (rodCenterX * (2 * 0 + 1)) - (disk.Width / 2);
-                        disk.Location = new Point(rodX, this.Height - (_amountOfDisks - i + 1) * (_uiScalingDisksHeight + 2) - 100);
-
-                        _rods[0].Push(disk);
-                        this.Controls.Add(disk);
-                    }
-                }
-
-
-
-                BtnReset.Enabled = false;
-                NudAmountOfDisks.Enabled = false;
-
-                SolverTowerOfHanoi(_amountOfDisks, 0, 2, 1);
-
-                BtnStartStop.Text = "Stop";
-                TmrHanoiMove.Start();
-
-                _processStarted = true;
+                    Location = new Point((rodCenterX * (2 * i + 1)) - (_uiScalingRodWidth / 2), this.Height - _uiScalingRodHeight - 100)
+                };
+                this.Controls.Add(rod);
             }
-            else
+
+            for (int i = _amountOfDisks; i > 0; i--)
             {
-                BtnStartStop.Text = "Start";
-                TmrHanoiMove.Stop();
+                Panel disk = new()
+                {
+                    Width = _uiScalingBiggestDiskWidth + (i - 1) * _uiScalingDisksMargin,
+                    Height = _uiScalingDisksHeight,
 
-                _processStarted = false;
-                _stopOver = true;
+                    BackColor = Color.DeepSkyBlue
+                };
+
+                int rodX = (rodCenterX * (2 * 0 + 1)) - (disk.Width / 2);
+                disk.Location = new Point(rodX, this.Height - (_amountOfDisks - i + 1) * (_uiScalingDisksHeight + 2) - 100);
+
+                _rods[0].Push(disk);
+                this.Controls.Add(disk);
             }
+
+
+
+            BtnReset.Enabled = false;
+            BtnStart.Enabled = false;
+            NudAmountOfDisks.Enabled = false;
+
+            SolverTowerOfHanoi(_amountOfDisks, 0, 2, 1);
+
+            TmrHanoiMove.Start();
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
@@ -204,10 +176,6 @@ namespace TowerOfHanoi
 
 
 
-            _processStarted = false;
-            _processEnded = false;
-            _stopOver = false;
-
             _moveIndex = 0;
             _amountOfCurrentMoves = 0;
 
@@ -216,7 +184,7 @@ namespace TowerOfHanoi
 
             PrgMoveProgess.Value = 0;
 
-            BtnStartStop.Enabled = true;
+            BtnStart.Enabled = true;
         }
 
 
