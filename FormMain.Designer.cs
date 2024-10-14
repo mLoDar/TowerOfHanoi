@@ -46,52 +46,49 @@
             // 
             // BtnReset
             // 
-            BtnReset.Location = new Point(289, 15);
-            BtnReset.Margin = new Padding(3, 2, 3, 2);
+            BtnReset.Location = new Point(330, 20);
             BtnReset.Name = "BtnReset";
-            BtnReset.Size = new Size(131, 38);
+            BtnReset.Size = new Size(150, 51);
             BtnReset.TabIndex = 1;
             BtnReset.Text = "Reset";
             BtnReset.UseVisualStyleBackColor = true;
+            BtnReset.Click += BtnReset_Click;
             // 
             // BtnStartStop
             // 
-            BtnStartStop.Location = new Point(140, 15);
-            BtnStartStop.Margin = new Padding(3, 2, 3, 2);
+            BtnStartStop.Location = new Point(160, 20);
             BtnStartStop.Name = "BtnStartStop";
-            BtnStartStop.Size = new Size(131, 38);
+            BtnStartStop.Size = new Size(150, 51);
             BtnStartStop.TabIndex = 0;
             BtnStartStop.Text = "Start";
             BtnStartStop.UseVisualStyleBackColor = true;
+            BtnStartStop.Click += BtnStartStop_Click;
             // 
             // TrbSpeed
             // 
-            TrbSpeed.Location = new Point(604, 15);
-            TrbSpeed.Margin = new Padding(3, 2, 3, 2);
+            TrbSpeed.Location = new Point(690, 20);
             TrbSpeed.Minimum = 1;
             TrbSpeed.Name = "TrbSpeed";
-            TrbSpeed.Size = new Size(131, 45);
+            TrbSpeed.Size = new Size(150, 56);
             TrbSpeed.TabIndex = 7;
             TrbSpeed.Value = 5;
             TrbSpeed.ValueChanged += TrbSpeed_ValueChanged;
             // 
             // PrgMoveProgess
             // 
-            PrgMoveProgess.Location = new Point(140, 112);
-            PrgMoveProgess.Margin = new Padding(3, 2, 3, 2);
+            PrgMoveProgess.Location = new Point(160, 149);
             PrgMoveProgess.Maximum = 500;
             PrgMoveProgess.Name = "PrgMoveProgess";
-            PrgMoveProgess.Size = new Size(595, 15);
+            PrgMoveProgess.Size = new Size(680, 20);
             PrgMoveProgess.TabIndex = 4;
             // 
             // NudAmountOfDisks
             // 
-            NudAmountOfDisks.Location = new Point(455, 32);
-            NudAmountOfDisks.Margin = new Padding(3, 2, 3, 2);
+            NudAmountOfDisks.Location = new Point(520, 43);
             NudAmountOfDisks.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             NudAmountOfDisks.Minimum = new decimal(new int[] { 3, 0, 0, 0 });
             NudAmountOfDisks.Name = "NudAmountOfDisks";
-            NudAmountOfDisks.Size = new Size(131, 23);
+            NudAmountOfDisks.Size = new Size(150, 27);
             NudAmountOfDisks.TabIndex = 3;
             NudAmountOfDisks.TextAlign = HorizontalAlignment.Center;
             NudAmountOfDisks.Value = new decimal(new int[] { 3, 0, 0, 0 });
@@ -100,9 +97,9 @@
             // LblSpeed
             // 
             LblSpeed.AutoSize = true;
-            LblSpeed.Location = new Point(617, 42);
+            LblSpeed.Location = new Point(705, 56);
             LblSpeed.Name = "LblSpeed";
-            LblSpeed.Size = new Size(106, 15);
+            LblSpeed.Size = new Size(134, 20);
             LblSpeed.TabIndex = 8;
             LblSpeed.Text = "Speed: 0.5 seconds";
             // 
@@ -110,18 +107,18 @@
             // 
             LblMoveProgess.AutoSize = true;
             LblMoveProgess.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LblMoveProgess.Location = new Point(407, 90);
+            LblMoveProgess.Location = new Point(435, 120);
             LblMoveProgess.Name = "LblMoveProgess";
-            LblMoveProgess.Size = new Size(70, 20);
+            LblMoveProgess.Size = new Size(146, 25);
             LblMoveProgess.TabIndex = 9;
-            LblMoveProgess.Text = "Progress";
+            LblMoveProgess.Text = "Moves progress";
             // 
             // LblAmountOfDisks
             // 
             LblAmountOfDisks.AutoSize = true;
-            LblAmountOfDisks.Location = new Point(468, 15);
+            LblAmountOfDisks.Location = new Point(535, 20);
             LblAmountOfDisks.Name = "LblAmountOfDisks";
-            LblAmountOfDisks.Size = new Size(97, 15);
+            LblAmountOfDisks.Size = new Size(119, 20);
             LblAmountOfDisks.TabIndex = 2;
             LblAmountOfDisks.Text = "Amount of disks:";
             // 
@@ -129,9 +126,9 @@
             // 
             LblMoveProgressMinimum.AutoSize = true;
             LblMoveProgressMinimum.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LblMoveProgressMinimum.Location = new Point(116, 109);
+            LblMoveProgressMinimum.Location = new Point(133, 145);
             LblMoveProgressMinimum.Name = "LblMoveProgressMinimum";
-            LblMoveProgressMinimum.Size = new Size(17, 20);
+            LblMoveProgressMinimum.Size = new Size(22, 25);
             LblMoveProgressMinimum.TabIndex = 5;
             LblMoveProgressMinimum.Text = "0";
             // 
@@ -139,21 +136,22 @@
             // 
             LblMoveProgressMaximum.AutoSize = true;
             LblMoveProgressMaximum.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LblMoveProgressMaximum.Location = new Point(740, 109);
+            LblMoveProgressMaximum.Location = new Point(846, 145);
             LblMoveProgressMaximum.Name = "LblMoveProgressMaximum";
-            LblMoveProgressMaximum.Size = new Size(17, 20);
+            LblMoveProgressMaximum.Size = new Size(22, 25);
             LblMoveProgressMaximum.TabIndex = 6;
             LblMoveProgressMaximum.Text = "0";
             // 
             // TmrHanoiMove
             // 
             TmrHanoiMove.Interval = 500;
+            TmrHanoiMove.Tick += TmrHanoiMove_Tick;
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(859, 415);
+            ClientSize = new Size(982, 553);
             Controls.Add(LblMoveProgess);
             Controls.Add(LblSpeed);
             Controls.Add(TrbSpeed);
@@ -164,7 +162,6 @@
             Controls.Add(LblAmountOfDisks);
             Controls.Add(BtnReset);
             Controls.Add(BtnStartStop);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FormMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tower of Hanoi visualization";
