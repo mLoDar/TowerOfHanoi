@@ -151,9 +151,8 @@ namespace TowerOfHanoi
                             BackColor = Color.DeepSkyBlue
                         };
 
-                        // Position disks centered on the first rod
-                        int rodX = (rodCenterX * (2 * 0 + 1)) - (disk.Width / 2); // Use the first rod (0-indexed)
-                        disk.Location = new Point(rodX, this.Height - (_amountOfDisks - i + 1) * (_uiScalingDisksHeight + 2) - 100); // Stack them downward
+                        int rodX = (rodCenterX * (2 * 0 + 1)) - (disk.Width / 2);
+                        disk.Location = new Point(rodX, this.Height - (_amountOfDisks - i + 1) * (_uiScalingDisksHeight + 2) - 100);
 
                         _rods[0].Push(disk);
                         this.Controls.Add(disk);
