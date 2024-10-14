@@ -93,7 +93,11 @@ namespace TowerOfHanoi
                 _processEnded = true;
 
                 BtnStartStop.Text = "Start";
+                BtnStartStop.Enabled = false;
+                PrgMoveProgess.Value = 0;
 
+                BtnReset.Enabled = true;
+                NudAmountOfDisks.Enabled = true;
 
 
                 string msbCaption = "Success";
@@ -161,6 +165,9 @@ namespace TowerOfHanoi
 
 
 
+                BtnReset.Enabled = false;
+                NudAmountOfDisks.Enabled = false;
+
                 SolverTowerOfHanoi(_amountOfDisks, 0, 2, 1);
 
                 BtnStartStop.Text = "Stop";
@@ -208,6 +215,8 @@ namespace TowerOfHanoi
             _moves = [];
 
             PrgMoveProgess.Value = 0;
+
+            BtnStartStop.Enabled = true;
         }
 
 
