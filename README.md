@@ -11,12 +11,19 @@ Additionally it gives a good visualization on how the algorithm works.
 
 ---
 
+> :warning: **Disclaimer** :warning:
+>
+> Most of the algorithm for visualization was created using Artifical Intelligence.
+> The reason for this is that I wanted to understand the logic behind it, as I knew nothing about it beforehand.
+
+---
+
 ## Features
 
-- **NumericUpDown** control to determine the amount of disks used for the solve process.
+- **Start** and **Reset** buttons to begin or restart the simulation.
 - **ProgressBar** which displays the current progress of the solve process.
 - **TrackBar** to set and change the speed of the visualization.
-- **Start** and **Reset** buttons to begin or restart the simulation.
+- **NumericUpDown** control to determine the amount of disks used for the solve process.
 
 ## How it Works
 
@@ -24,8 +31,6 @@ The _"Tower of Hanoi"_ is a problem where you move a set of disks from one rod t
 - Only one disk can be moved at a time.
 - Bigger disks can not be placed on smaller disks.
 - Disks must be moved between the three rods (source, auxiliary, destination).
-
-The visualization runs the recursive algorithm to solve the problem and visually moves the disks between the pegs on the form.
 
 ## Controls
 
@@ -46,9 +51,9 @@ The visualization runs the recursive algorithm to solve the problem and visually
 ## Screenshots
 
 <p align="center">
-    <img style='height: 90%; width: 90%;' alt="RootMenu" src="readme-files/TowerHanoiProgress.PNG"/>
+    <img style='height: 90%; width: 90%;' alt="TowerHanoiProgress" src="readme-files/TowerHanoiProgress.PNG"/>
     <br>
-    <img style='height: 90%; width: 90%;' alt="AddPlate" src="readme-files/TowerHanoiFinished.PNG"/>
+    <img style='height: 90%; width: 90%;' alt="TowerHanoiFinished" src="readme-files/TowerHanoiFinished.PNG"/>
 </p>
 
 ## Future Improvements
@@ -62,5 +67,11 @@ The visualization runs the recursive algorithm to solve the problem and visually
 <p align="center">
     <i>
         Feel free to submit pull requests or issues!
+    </i>
+</p>
+
+<p align="center">
+    <i>
+        This readme file was structered by Artificial Intelligence, based on the project structure.
     </i>
 </p>
